@@ -9,7 +9,7 @@
  *@format: format of string.
  *return: length of string
  */
-int _printf(const char format, ...)
+int _printf(const char *format, ...)
 {
     int len = 0;
     va_list ptr;
@@ -27,7 +27,7 @@ int _printf(const char format, ...)
             }
             else if (format[i + 1] == 's')
             {
-                chars = va_arg(ptr, char );
+                char *s = va_arg(ptr, char *);
                 while (s != '\0')
                 {
                     len += _putchar(*s);
