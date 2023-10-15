@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <strdag.h>
-#include <unstid.h>
+#include <unistd.h>
 /*
  *switcher: cases
  *@format: format of string.

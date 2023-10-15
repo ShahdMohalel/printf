@@ -20,14 +20,14 @@ int _printf(const char *format, ...)
         {
 		format++;
 		len = switcher(format, args, len);
+		format++;
 	}
 	else
 	{
 		_putchar(*format);
 		len++;
+		format++;
 	}
-
-	format++;
     }
 
     va_end(args);
