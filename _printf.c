@@ -3,6 +3,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include "main.h"
+/*
+ *_printf: print.
+ *@format: format of string.
+ *return: length of string
+ */
 int _printf(const char *format, ...)
 {
 int i;
@@ -47,7 +52,7 @@ i++;
 continue;
 }
 }
-putchar(format[i]);
+_putchar(format[i]);
 len++;
 }
 va_end(ptr);
