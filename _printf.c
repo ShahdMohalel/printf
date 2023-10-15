@@ -11,11 +11,12 @@
  */
 int _printf(const char *format, ...)
 {
+	int i;
     int len = 0;
     va_list ptr;
     va_start(ptr, format);
 
-    for (int i = 0; format[i] != '\0'; i++)
+    for (i = 0; format[i] != '\0'; i++)
     {
         if (format[i] == '%')
         {
