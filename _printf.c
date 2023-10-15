@@ -20,8 +20,6 @@ int _printf(const char *format, ...)
 
     while (*format != '\0')
     {
-	if(*format == '%' && (format[1] == 'c' || format[1] == ' '))
-	{	
 
 	        if (*format == '%')
         	{
@@ -67,7 +65,6 @@ int _printf(const char *format, ...)
 	       	}
 
 	        format++;
-	    }
     }
 
     va_end(ptr);
