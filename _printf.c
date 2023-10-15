@@ -15,40 +15,38 @@ int _printf(const char format, ...)
     va_list ptr;
     va_start(ptr, format);
 
-    while(*format != '\0')
+    for (int i = 0; format[i] != '\0'; i++)
     {
-        if (*format == '%')
+        if (format[i] == '%')
         {
-            format++;
-	    switch(*format)
-	    {
-            	case 'c':
-			int c = va_arg(ptr, int);
-        	        len += _putchar(c);
-			format++;
-
-		case 's':
-	                char *s = va_arg(ptr, char *);
-			while (s != '\0')
-                	{
-				len += _putchar(*s);
-				s++;
-			}
-
-		case '%':
-	                len += _putchar('%');
-        	        format++;
-
-		default:
-			return;
-	    }
+            if (format[i + 1] == 'c')
+            {
+                int c = va_arg(ptr, int);
+                len += _putchar(c);
+                i++;
+            }
+            else if (format[i + 1] == 's')
+            {
+                chars = va_arg(ptr, char );
+                while (s != '\0')
+                {
+                    len += _putchar(*s);
+                    s++;
+                }
+                i++;
+            }
+            else if (format[i + 1] == '%')
+            {
+                len += _putchar('%');
+                i++;
+            }
         }
         else
         {
-            len += _putchar(*format);
+            len += _putchar(format[i]);
         }
     }
 
     va_end(ptr);
-    return (len);
+    return len;
 }
