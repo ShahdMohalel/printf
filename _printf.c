@@ -16,14 +16,12 @@ return (0);
 va_start(ptr, format);
 for (i = 0; format[i] != '\0'; i++)
 {
-char c;
 char *s;
 if (format[i] == '%')
 {
 if (format[i + 1] == 'c')
 {
 _putchar(va_arg(ptr, int));
-c = va_arg(ptr, int);
 len++;
 } 
 else if (format[i + 1] == 's')
@@ -52,4 +50,3 @@ continue;
 va_end(ptr);
 return (len);
 }
-
