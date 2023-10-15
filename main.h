@@ -2,7 +2,7 @@
 #define MAIN_H
 
 #include <stdio.h>
-#include <strdag.h>
+#include <stdarg.h>
 #include <unistd.h>
 
 int switcher(const char *format, va_list args, int len);
