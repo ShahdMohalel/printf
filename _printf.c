@@ -21,33 +21,32 @@ int _printf(const char *format, ...)
         {
             format++;
 
-            switch (*format)
+            if (*format == 'c')
             {
-                case 'c':
-                    int c = va_arg(ptr, int);
-                    _putchar(c);
+                int c = va_arg(ptr, int);
+                _putchar(c);
+                len++;
+            }
+            else if (*format == 's')
+            {
+                char *s = va_arg(ptr, char *);
+                while (*s != '\0')
+                {
+                    _putchar(*s);
                     len++;
-                    break;
-
-                case 's':
-                    char *s = va_arg(ptr, char *);
-                    while (*s != '\0')
-                    {
-                        _putchar(*s);
-                        len++;
-                        s++;
-                    }
-                    break;
-
-                case '%':
-                    _putchar('%');
-                    len++;
-                    break;
-
-                default:
-                    _putchar('%');
-                    _putchar(*format);
-                    len += 2;
+                    s++;
+                }
+            }
+            else if (*format == '%')
+            {
+                _putchar('%');
+                len++;
+            }
+            else
+            {
+                _putchar('%');
+                _putchar(*format);
+                len += 2;
             }
         }
         else
