@@ -48,6 +48,7 @@ continue;
 }
 }
 putchar(format[i]);
+len++;
 }
 va_end(ptr);
 return (len);
