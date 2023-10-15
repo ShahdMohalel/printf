@@ -9,28 +9,46 @@
  *@format: format of string.
  *return: length of string
  */
-int _printf(const char *format, ...)
+int _printf(const char format, ...)
 {
     int len = 0;
-    va_list args;
-    va_start(args, format);
+    va_list ptr;
+    va_start(ptr, format);
 
     while(*format != '\0')
     {
         if (*format == '%')
         {
-		format++;
-		len = switcher(format, args, len);
-		format++;
-	}
-	else
-	{
-		_putchar(*format);
-		len++;
-		format++;
-	}
+            format++;
+	    switch(*format)
+	    {
+            	case 'c':
+			int c = va_arg(ptr, int);
+        	        len += _putchar(c);
+			format++;
+
+		case 's':
+	                char *s = va_arg(ptr, char *);
+			while (s != '\0')
+                	{
+				len += _putchar(*s);
+				s++;
+			}
+
+		case '%':
+	                len += _putchar('%');
+        	        format++;
+
+		default:
+			return;
+	    }
+        }
+        else
+        {
+            len += _putchar(*format);
+        }
     }
 
-    va_end(args);
+    va_end(ptr);
     return (len);
 }
