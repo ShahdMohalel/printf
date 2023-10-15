@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-#include <strdag.h>
+#include <stdarg.h>
 #include <unistd.h>
 /*
  *switcher: cases
