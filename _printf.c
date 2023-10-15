@@ -23,6 +23,12 @@ int _printf(const char *format, ...)
 
     while (*format != '\0')
     {
+	if (*format != '%')
+	{
+		len += _putchar(*format);
+		continue;
+	}
+
         if (*format == '%')
         {
             format++;
