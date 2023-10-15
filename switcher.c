@@ -21,10 +21,12 @@ int switcher(const char *format, va_list args, int len)
 
 		case 's':
 			char *s = va_arg(args, char *);
-			if(!s)
-				break;
-			_putchar(s);
-			len++;
+			while(*s != '\0')
+			{
+				_putchar(s);
+				len++;
+				s++;
+			}
 			break;
 
 		case '%':
