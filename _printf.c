@@ -11,41 +11,45 @@
  */
 int _printf(const char *format, ...)
 {
+	int i;
     int len = 0;
     va_list ptr;
     va_start(ptr, format);
 
     while(*format != '\0')
     {
-	    format++;
-	    switch(*format)
+	    for (int i = 0; format[i] != '\0'; i++)
 	    {
-		    case 'c':
-	                int c = va_arg(ptr, int);
-        	        len += _putchar(c);
-               		format++;
-			break;
+	    	format++;
+		    switch(*format)
+		    {
+			    case 'c':
+	                	int c = va_arg(ptr, int);
+	        	        len += _putchar(c);
+        	       		format++;
+				break;
 
-		    case 's':
-	                char *s = va_arg(ptr, char *);
-        	        while (*s != '\0')
-               	 	{
-				 len += _putchar(*s);
-				s++;
-                	}
-                	format++;
-			break;
+			    case 's':
+		                char *s = va_arg(ptr, char *);
+        		        while (*s != '\0')
+               	 		{
+					 len += _putchar(*s);
+					s++;
+        	        	}
+                		format++;
+				break;
 
-		case '%':
+			case '%':
+	
+        	       		 len += _putchar('%');
+                		format++;
+				break;
 
-               		 len += _putchar('%');
-                	format++;
-			break;
-
-		default:
-           		 len += _putchar(format[i]);
-			 break;
-        }
+			default:
+        	   		 len += _putchar(format[i]);
+				 break;
+	        }
+	    }
     }
 
     va_end(ptr);
