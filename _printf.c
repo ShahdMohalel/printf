@@ -15,56 +15,59 @@ int _printf(const char *format, ...)
     va_list ptr;
     va_start(ptr, format);
 
-    if(!format || (format[0] == '%' && !format[1]))
+    if(!format || format[0] == '%')
 	    return (-1);
 
     while (*format != '\0')
     {
+	if(*format == '%' && (format[1] == 'c' || format[1] == ' '))
+	{	
 
-        if (*format == '%')
-        {
-            format++;
+	        if (*format == '%')
+        	{
+	            format++;
 
-            if (*format == 'c')
-            {
-                int c = va_arg(ptr, int);
-                _putchar(c);
-                len++;
-            }
-            else if (*format == 's')
-            {
-                char *s = va_arg(ptr, char *);
-                while (*s != '\0')
-                {
-                    _putchar(*s);
-                    len++;
-                    s++;
-                }
-            }
-            else if (*format == '%')
-            {
-                _putchar('%');
-                len++;
-            }
-            else
-            {
-                _putchar('%');
-                _putchar(*format);
-                len += 2;
-            }
-        }
+        	    if (*format == 'c')
+            	{
+	                int c = va_arg(ptr, int);
+        	        _putchar(c);
+                	len++;
+	            }
+        	    else if (*format == 's')
+	            {
+        	        char *s = va_arg(ptr, char *);
+	                while (*s != '\0')
+        	        {
+                	    _putchar(*s);
+	                    len++;
+        	            s++;
+                	}
+	            }
+        	    else if (*format == '%')
+	            {
+	                _putchar('%');
+        	        len++;
+	            }	
+        	    else
+	            {
+        	        _putchar('%');
+	                _putchar(*format);
+        	        len += 2;
+	            }
+        	}
 
-        else
-        {
-		if(*format == ' ')
-			_putchar(' ');
-		else
-            	_putchar(*format);
+	        else
+        	{
+			if(*format == ' ')
+				_putchar(' ');
+			else
+	            	_putchar(*format);
 
-            len++;
-        }
+        	    len++;
+	       	}
 
-        format++;
+	        format++;
+	    }
     }
 
     va_end(ptr);
