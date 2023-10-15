@@ -59,8 +59,8 @@ int _printf(const char *format, ...)
 
 	        else
         	{
-	            	len += _putchar(*format);
-			continue;
+	            	_putchar(*format);
+			len++;
 	       	}
 
 	        format++;
