@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
             else if (format[i + 1] == 's')
             {
                 char *s = va_arg(ptr, char *);
-                while (s != '\0')
+                while (*s != '\0')
                 {
                     len += _putchar(*s);
                     s++;
@@ -48,5 +48,5 @@ int _printf(const char *format, ...)
     }
 
     va_end(ptr);
-    return len;
+    return (len);
 }
