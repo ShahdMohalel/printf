@@ -41,11 +41,13 @@ else if (format[i + 1] == '%')
 _putchar('%');
 len++;
 }
-if (format[i] == '%' && (format[i + 1] == 'c' || format[i + 1] == 's')) {
+if (format[i] == '%' && (format[i + 1] == 'c' || format[i + 1] == 's'))
+{
 i++;
 continue;
 }
 }
+putchar(format[i]);
 }
 va_end(ptr);
 return (len);
