@@ -55,10 +55,7 @@ int _printf(const char *format, ...)
                 len += 2;
             }
         }
-	else if(*format == ' ')
-	{
-		_putchar(' ');
-		len++;
+
         else
         {
             _putchar(*format);
