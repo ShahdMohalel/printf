@@ -23,11 +23,9 @@ int _printf(const char *format, ...)
 
     while (*format != '\0')
     {
-	if (*format != '%')
-	{
-		len += _putchar(*format);
-		continue;
-	}
+	if(format[0] == ' ')
+		_putchar(' ');
+	len++;
 
         if (*format == '%')
         {
