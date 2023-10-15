@@ -1,5 +1,6 @@
-#ifndef FUNCTION
-#define FUNCTION
+#ifndef MAIN_H
+#define MAIN_H
+
 #include <stdio.h>
 #include <strdag.h>
 #include <unistd.h>
