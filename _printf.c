@@ -23,9 +23,6 @@ int _printf(const char *format, ...)
 
     while (*format != '\0')
     {
-	if(format[0] == ' ')
-		_putchar(' ');
-	len++;
 
         if (*format == '%')
         {
@@ -62,7 +59,11 @@ int _printf(const char *format, ...)
 
         else
         {
-            _putchar(*format);
+		if(*format == ' ')
+			_putchar(' ');
+		else
+            	_putchar(*format);
+
             len++;
         }
 
