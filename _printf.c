@@ -32,7 +32,7 @@ len++;
 else if (format[i + 1] == 's')
 {
 s = va_arg(ptr, char *);
-if(*s != NULL)
+if(*s != '\0')
 {
 for (j = 0; s[j] != '\0'; j++)
 {
