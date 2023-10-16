@@ -7,10 +7,10 @@
 
 typedef struct s_list
 {
-	va_list	args;
-	size_t	i;
-	size_t	ret;
-}	t_list;
+	va_list args;
+	int i;
+	int ret;
+}t_list;
 
 void _putchar(char c, int x, size_t *ret, size_t *i);
 void _putcharfd(char c, int x, size_t *ret);

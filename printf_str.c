@@ -13,7 +13,7 @@ void printf_str(char *s, int x, size_t *ret, size_t *i)
 	size_t y, z;
 	char *n;
 	y = 0;
-	*i++;
+	(*i)++;
 	n = "(null)";
 
 	if(s == '\0')
@@ -42,7 +42,7 @@ size_t _strlen(const char *str)
 {
 	size_t l = 0;
 
-	while(str[l])
+	while(str[l] && str)
 		l++;
 	return (l);
 }

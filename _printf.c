@@ -12,7 +12,7 @@
 int _printf(const char *format, ...)
 {
 	t_list *st;
-	int len = 0, length;
+	int length;
 	st = (t_list *)malloc(sizeof(t_list));
 	st->i = 0;
 	st->ret = 0;
@@ -28,10 +28,10 @@ int _printf(const char *format, ...)
 				switcher(st, format);
 		}
 		else
-			_putcharfd(format[st->i++], 1, &st->rat);
+			_putcharfd(format[st->i++], 1, &st->ret);
 	}
 	va_end(st->args);
-	length = st->len;
+	length = st->ret;
 	free(st);
 	return (length);
 }

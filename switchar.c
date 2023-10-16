@@ -16,4 +16,6 @@ int switcher(t_list *st, const char *args)
 	}
 	else if(args[st->i] == 's')
 		printf_str(va_arg(st->args,char *), 1, &st->ret, &st->i);
+	else
+		return(0);
 }

@@ -13,5 +13,5 @@
 void _putcharfd(char c, int x, size_t *ret)
 {
 	write(x, &c, 1);
-	*ret++;
+	(*ret)++;
 }

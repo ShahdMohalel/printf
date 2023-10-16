@@ -12,6 +12,6 @@
 void _putchar(char c, int x, size_t *ret, size_t *i)
 {
 	write(x, &c, 1);
-	*ret++;
-	*i++;
+	(*ret)++;
+	(*i)++;
 }
