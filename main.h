@@ -4,12 +4,13 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <math.h>
 #include <limits.h>
 
-int _putchar(char character);
-int printf_char(va_list args, int len);
-int printf_string(va_list args, int len);
-int switcher(const char *format, va_list args, int len);
+int print_char(char c);
+int print_string(char *s);
 int _printf(const char *format, ...);
-int printf_integer(va_list args, int len);
+int getNumberLength(int myNum);
+void check_number(int n);
+
 #endif

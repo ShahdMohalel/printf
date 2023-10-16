@@ -1,24 +1,28 @@
 #include "main.h"
+
 /**
- *print_string - prints a string to stdout,1 char at a time
+ * print_string - Prints a string
+ * @text: the  string pointer
  *
- *@args: args to increment
- *@len: length
- *
- *Return:no of char printed
+ * Return: the size of the string
  */
-int printf_string(va_list args, int len)
+
+int print_string(char *text)
 {
-        char *string = va_arg(args, char *);
+	int sstrlen = 0;
 
-        if(*string == '\0')
-                string = "(null)";
+	if (text == NULL)
+	{
+		sstrlen += write(1, "(null)", 6);
+		return (sstrlen);
 
-        while (*string != '\0')
-        {
-                _putchar(*string);
-                len++;
-                string++;
-        }
-        return (len);
+	}
+
+	while (*(text + sstrlen))
+	{
+		write(1, text + sstrlen, 1);
+		sstrlen++;
+	}
+
+	return (sstrlen);
 }

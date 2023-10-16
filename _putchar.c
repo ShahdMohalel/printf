@@ -1,13 +1,15 @@
 #include "main.h"
 
 /**
- * _putchar - prints/writes character
- * @character: The character to print
- * Return: 1, success, -1 error
+ * print_char - Prints a character
+ * @any_char: char
+ *
+ * Return: The number of chars printed
  */
 
-int _putchar(char character)
+int print_char(char any_char)
 {
-	write(1, &character, 1);
+	write(1, &any_char, 1);
+
 	return (1);
 }
