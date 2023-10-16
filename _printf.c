@@ -27,13 +27,8 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if(*format == '\0')
-				return (-1);
-			else
-			{
-				len = switcher(format, args, len);
-				format++;
-			}
+			len = switcher(format, args, len);
+			format++;
 		}
 		else
 		{
