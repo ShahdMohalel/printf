@@ -9,20 +9,13 @@
  */
 int printf_string(va_list args, int len)
 {
-	char *str;
-	int i;
-	char c;
+	char *string = va_arg(args, char *);
 
-	str = va_arg(args, char *);
-	if (*str == NULL)
+	while (*string != '\0')
 	{
-		str = "(null)";
-	}
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		c = str[i];
-		write(1, &c, 1);
+		_putchar(*string);
 		len++;
+		string++;
 	}
 	return (len);
 }
