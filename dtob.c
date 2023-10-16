@@ -6,15 +6,14 @@
  *
  * Return: Nothing
  */
-int dtob(unsigned int n)
+int dtob(unsigned int n, int len)
 {
-    int l = 0;
     if (n < 1)
         return (0);
 
-    l += dtob(n / 2);
+    dtob(n / 2);
     int rem = n % 2;
     print_char(rem + '0');
-    l++;
-    return l;
+    len++;
+    return (len);
 }

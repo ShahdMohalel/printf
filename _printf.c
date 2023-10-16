@@ -54,7 +54,7 @@ int _printf(const char *format, ...)
 						check_number(digit);
 						break;
 					case 'b':
-					    len += dtob(va_arg(args, unsigned int));
+					    len += dtob((va_arg(args, unsigned int)), len);
 					    break;
 					default:
 						len += print_char('%');
