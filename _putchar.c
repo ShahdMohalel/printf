@@ -9,6 +9,7 @@
 
 int print_char(char any_char)
 {
+
 	write(1, &any_char, 1);
 
 	return (1);

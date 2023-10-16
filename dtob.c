@@ -9,7 +9,7 @@
  */
 int dtob(unsigned long int n, int len)
 {
-	long int binary[64] = {0};
+	int long binary[64] = {0};
 	int i = 0;
 
 	if (n == INT_MAX)
@@ -23,17 +23,16 @@ int dtob(unsigned long int n, int len)
     		{
         		print_char(max_digits[i] + '0');
     		}
-    		len += 32;
+    		len+=32;
 	}
 
 	if (n == 0)
 	{
 		print_char('0');
-		len++;
-		return (len);
+		return (1);
 	}
 
-	while (n > 0)
+	while (n > 0 || n > INT_MAX)
 	{
 		binary[i] = n % 2;
 		n /= 2;
@@ -46,6 +45,5 @@ int dtob(unsigned long int n, int len)
 		print_char('0' + binary[i]);
 		len++;
 	}
-
 	return (len);
 }
