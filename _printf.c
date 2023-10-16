@@ -23,19 +23,12 @@ int _printf(const char *format, ...)
 		if(format[st->i] == '%')
 		{
 			if(format[++st->i] == '%')
-			{
-				write(1, &format[st->i], 1);
-				*i++;
-				*len++;
-			}
+				_putchar(format[st->i], 1, &st->ret, &st->i);
 			else
 				switcher(st, format);
 		}
 		else
-		{
-			write(1, &format[st->i++], 1);
-			*len++;
-		}
+			_putcharfd(format[st->i++], 1, &st->rat);
 	}
 	va_end(st->args);
 	length = st->len;

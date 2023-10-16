@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdlib.h>
+
 typedef struct s_list
 {
 	va_list	args;
@@ -10,7 +12,8 @@ typedef struct s_list
 	size_t	ret;
 }	t_list;
 
-int _putchar(char c);
+void _putchar(char c, int x, size_t *ret, size_t *i);
+void _putcharfd(char c, int x, size_t *ret);
 int _printf(const char *format, ...);
 size_t _strlen(const char *str);
 void printf_str(char *s, int x, size_t *ret, size_t *i);

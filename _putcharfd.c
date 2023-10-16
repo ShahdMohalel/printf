@@ -9,9 +9,9 @@
  * @i: length
  * Return: On success
  */
-void _putchar(char c, int x, size_t *ret, size_t *i)
+
+void _putcharfd(char c, int x, size_t *ret)
 {
 	write(x, &c, 1);
 	*ret++;
-	*i++;
 }
