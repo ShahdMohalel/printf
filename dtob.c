@@ -7,9 +7,9 @@
  *
  * Return: The number of characters printed.
  */
-int dtob(unsigned int n, int len)
+int dtob(unsigned long int n, int len)
 {
-	int binary[100] = {0};
+	unsigned long int binary[100] = {0};
 	int i = 0;
 
 	if (n == INT_MAX)
