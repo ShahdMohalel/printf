@@ -14,5 +14,6 @@ int _printf(const char *format, ...);
 int getNumberLength(int myNum);
 void check_number(int n);
 int dtob(unsigned long int n, int len);
-
+void hexadecimal(unsigned int num);
+void _sprintf(char *str);
 #endif
