@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 	{
 		if(*format == '%' && !format[1])
 	            return (-1);
-		if (*format == '%' && (formatt++))
+		if (*format == '%' && (*formatt++))
 		{
 			format++;
 			len = switcher(format, args, len);
