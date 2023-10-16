@@ -13,17 +13,22 @@ int printf_string(va_list args, int len)
 
 	int x = 0;
 	char *nl = "(null)";
-	if (*str == NULL)
+	if (*str == '\0')
 	{
 		while (x < 6)
-			_putchar(nl[x++]);
-		return ;
+		{
+			_putchar(nl[x]);
+			x++;
+		}
 	}
-	while (*str != '\0')
+	else
 	{
-		_putchar(*str);
-		len++;
-		str++;
+		while (*str != '\0')
+		{
+			_putchar(*str);
+			len++;
+			str++;
+		}
 	}
 	return (len);
 }
