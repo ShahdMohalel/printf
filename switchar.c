@@ -25,6 +25,10 @@ int switcher(const char *format, va_list args, int len)
         	    	_putchar('%');
 		            len++;
        		}
+		else if(*format == 'd' || *format == 'i')
+        	{
+        	    len = printf_integer(args, len);
+        	}
         	else
         	{
 			_putchar('%');
