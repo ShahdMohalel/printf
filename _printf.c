@@ -21,16 +21,19 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
-	if(format == '\0')
-		return (-1);
 
 	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
 			format++;
-			len = switcher(format, args, len);
-			format++;
+			if(!format)
+				return (-1);
+			else
+			{
+				len = switcher(format, args, len);
+				format++;
+			}
 		}
 		else
 		{
