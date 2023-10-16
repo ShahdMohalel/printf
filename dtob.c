@@ -9,11 +9,11 @@
 int dtob(unsigned int n, int len)
 {
     if (n < 1)
-        return (0);
+        return len;
 
-    dtob(n / 2);
+    len = dtob(n / 2, len);
     int rem = n % 2;
     print_char(rem + '0');
     len++;
-    return (len);
+    return len;
 }
