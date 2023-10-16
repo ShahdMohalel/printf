@@ -9,28 +9,38 @@
  */
 int dtob(unsigned int n, int len)
 {
-    int binary[100] = {0};
-    int i = 0;
-
     if (n == 0)
     {
-        binary[i] = 0;
-        i++;
+        print_char('0');
+        len++;
+        return len;
     }
+
+    char binary[100];
+    int i = 0;
 
     while (n > 0)
     {
-        binary[i] = n % 2;
+        binary[i] = (n % 2) + '0';
         n /= 2;
         i++;
+        len++;
     }
 
-    len += i;
+    binary[i] = '\0';
+.
+    int middle = i / 2;
+    for (int x = 0; x < middle; x++)
+    {
+        char temp = binary[x];
+        binary[x] = binary[i - x - 1];
+        binary[i - x - 1] = temp;
+    }
 
-    while (i > 0)
-        {
-            i--;
-            print_char('0' + binary[i]);
-        }
-    return (len);
+    for (int x = 0; x < i; x++)
+    {
+        print_char(binary[x]);
+    }
+
+    return len;
 }
