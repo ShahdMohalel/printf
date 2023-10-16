@@ -7,31 +7,29 @@
  *
  * Return: The number of characters printed.
  */
-int dtob(unsigned int n, int len) {
-    int binary[32] = {0};
+int dtob(unsigned int n, int len)
+{
+    int binary[100] = {0};
     int i = 0;
 
-    if (n == 0) {
+    if (n == 0)
+    {
         binary[i] = 0;
         i++;
     }
 
-    while (n > 0) {
+    while (n > 0)
+    {
         binary[i] = n % 2;
         n /= 2;
         i++;
-    }
-
-    int totalChars = i;
-
-    if (len) {
-        len += totalChars;
     }
 
     while (i > 0)
         {
             i--;
             print_char('0' + binary[i]);
+	    len++;
         }
     return len;
 }
