@@ -25,11 +25,12 @@ int dtob(unsigned int n, int len)
         i++;
     }
 
+    len += i;
+
     while (i > 0)
         {
             i--;
             print_char('0' + binary[i]);
-	    len++;
         }
-    return (len + 1);
+    return (len);
 }
