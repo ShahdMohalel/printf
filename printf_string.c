@@ -16,7 +16,7 @@ int printf_string(va_list args, int len)
 	if (*str == NULL)
 	{
 		while (x < 6)
-			print_string(nl[x++], len);
+			_putchar(nl[x++]);
 		return ;
 	}
 	while (*str != '\0')
