@@ -19,11 +19,6 @@ int switcher(const char *format, va_list args, int len)
 		else if(*format == 's')
 			len = printf_string(args, len);
 
-		else if (*format == '%')
-        	{
-        	    	_putchar('%');
-		            len++;
-       		}
 		else if(*format == 'd' || *format == 'i')
         	{
 			len = printf_integer(args, len);
