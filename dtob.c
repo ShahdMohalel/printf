@@ -15,11 +15,11 @@ int dtob(unsigned int n, int len)
 	if (n == UINT_MAX)
 	{
 		int max_digits[32];
-    		for (int i = 0; i < 32; i++)
+    		for (i = 0; i < 32; i++)
     		{
         		max_digits[i] = 1;
     		}
-		for (int i = 31; i >= 0; i--)
+		for (i = 31; i >= 0; i--)
     		{
         		print_char(max_digits[i] + '0');
     		}
@@ -33,7 +33,7 @@ int dtob(unsigned int n, int len)
 		return (len);
 	}
 
-	while (num > 0)
+	while (n > 0)
 	{
 		binary[i] = n % 2;
 		n /= 2;
@@ -47,5 +47,5 @@ int dtob(unsigned int n, int len)
 		len++;
 	}
 
-	return (leb);
+	return (len);
 }
