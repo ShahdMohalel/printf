@@ -22,27 +22,20 @@ int _printf(const char *format, ...)
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 	
-	int i = 0;
-
-	while (format[i] != '\0')
+	while (*format != '\0')
 	{
-		if (format[i] == '%')
+		if (*format == '%')
 		{
-			if (format[i + 1] == '\0')
-				return (-1);
-			else
-			{
-				format++;
-				len = switcher(format, args, len);
-				format++;
-			}
+			format++;
+			len = switcher(format, args, len);
+			format++;
 		}
 		else
 		{
-			_putchar(format[i]);
+			_putchar(*format);
 			len++;
+			format++;
 		}
-		i++;
 	}
 	va_end(args);
 	return (len);
