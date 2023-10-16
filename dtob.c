@@ -9,33 +9,43 @@
  */
 int dtob(unsigned int n, int len)
 {
-    if (n == 0)
-    {
-        print_char('0');
-        len++;
-        return len;
-    }
+	int binary[32] = {0};
+	int i = 0;
 
-    char binary[100];
-    int i = 0;
-        if (n == 0)
-    {
-        binary[i] = 0;
-        i++;
-    }
+	if (n == UINT_MAX)
+	{
+		int max_digits[32];
+    		for (int i = 0; i < 32; i++)
+    		{
+        		max_digits[i] = 1;
+    		}
+		for (int i = 31; i >= 0; i--)
+    		{
+        		print_char(max_digits[i] + '0');
+    		}
+    		len += 32;
+	}
 
-    while (n > 0)
-    {
-        binary[i] = n % 2;
-        n /= 2;
-        i++;
-    }
+	if (n == 0)
+	{
+		print_char('0');
+		len++;
+		return (len);
+	}
 
-    while (i > 0)
-        {
-            i--;
-            print_char('0' + binary[i]);
-	    len++;
-        }
-    return len;
+	while (num > 0)
+	{
+		binary[i] = n % 2;
+		n /= 2;
+		i++;
+	}
+
+	while (i > 0)
+	{
+		i--;
+		print_char('0' + binary[i]);
+		len++;
+	}
+
+	return (leb);
 }
