@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			printed = selector(format, args, len);
+			len = switcher(format, args, len);
 			format++;
 		}
 		else
