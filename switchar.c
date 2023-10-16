@@ -27,7 +27,7 @@ int switcher(const char *format, va_list args, int len)
        		}
 		else if(*format == 'd' || *format == 'i')
         	{
-        	    len = printf_integer(args, len);
+			len = printf_integer(args, len);
         	}
         	else
         	{
