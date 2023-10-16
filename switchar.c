@@ -36,9 +36,6 @@ int switcher(const char *format, va_list args, int len)
         	    len += 2;
 	        }
 		format++;
-	}else
-	{
-		_putchar('\0');
 	}
 	return (len);
 }
