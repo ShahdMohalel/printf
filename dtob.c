@@ -9,7 +9,7 @@
 int dtob(unsigned int n, int len)
 {
     if (n < 1)
-        return len;
+        return (-1);
 
     len = dtob(n / 2, len);
     int rem = n % 2;
