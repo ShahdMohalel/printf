@@ -26,4 +26,3 @@ int printf_string(va_list args, int len)
 	}
 	return (len);
 }
-
