@@ -29,6 +29,8 @@ void printf_str(char *s, int x, size_t *ret, size_t *i)
 
 	while(y < 0)
 		printf_str(s[y++], x, ret);
+
+	return (0);
 }
 
 /**
