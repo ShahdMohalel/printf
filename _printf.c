@@ -21,21 +21,28 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
+	
+	int i = 0;
 
-	while (*format != '\0')
+	while (format[i] != '\0')
 	{
-		if (*format == '%')
+		if (format[i] == '%')
 		{
-			format++;
-			len = switcher(format, args, len);
-			format++;
+			if (format[i + 1] == '\0')
+				return (-1);
+			else
+			{
+				format++;
+				len = switcher(format, args, len);
+				format++;
+			}
 		}
 		else
 		{
-			_putchar(*format);
+			_putchar(format[i]);
 			len++;
-			format++;
 		}
+		i++;
 	}
 	va_end(args);
 	return (len);
