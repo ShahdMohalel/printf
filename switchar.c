@@ -12,12 +12,12 @@ int switcher(const char *format, va_list args, int len)
 {
 	if(*format)
 	{
-		if(format == 'c')
+		if(*format == 'c')
 		{
 			_putchar(va_arg(args, int));
 			len++;
 		}
-		else if(format == 's')
+		else if(*format == 's')
 			len = printf_string(args, len);
 		else
 		{
