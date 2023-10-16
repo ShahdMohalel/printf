@@ -39,7 +39,7 @@ int dtob(unsigned int n, int len)
 
     for (int x = 0; x < i; x++)
     {
-        print_char(binary[x]);
+        print_char(binary[x] + '0');
     }
 
     return len;
