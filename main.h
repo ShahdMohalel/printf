@@ -13,5 +13,6 @@ int printf_integer(va_list args, int len);
 int _printf(const char *format, ...);
 int getNumberLength(int myNum);
 void check_number(int n);
+int dtob(unsigned int n);
 
 #endif
