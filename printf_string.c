@@ -7,7 +7,7 @@
  *
  *Return:no of char printed
  */
-int printf_string(va_list args, len)
+int printf_string(va_list args, int len)
 {
 	char *str;
 	int i;
