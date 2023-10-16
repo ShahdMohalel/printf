@@ -18,8 +18,6 @@ int dtob(unsigned int n, int len)
     if (n == 0)
     {
         binary[i] = 0;
-	if(binary[0] == 0 && binary[1])
-		return (-1);
         i++;
     }
 
