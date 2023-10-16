@@ -12,9 +12,6 @@ int dtob(unsigned int n, int len)
     int binary[100] = {0};
     int i = 0;
 
-    if(!n)
-	    return (-1);
-
     if (n == 0)
     {
         binary[i] = 0;
@@ -34,5 +31,5 @@ int dtob(unsigned int n, int len)
             print_char('0' + binary[i]);
 	    len++;
         }
-    return len;
+    return (len + 1);
 }
