@@ -1,36 +1,37 @@
+#include <stdio.h>
 #include "main.h"
-
 /**
- * check_number - Print the digits of an integer and handle special cases
- * @n: The integer needs to be checked and printed
+ * dtob - Convert an unsigned integer to binary and count characters.
+ * @n: The unsigned integer to convert.
+ * @len: A pointer to the count of characters printed.
  *
- * Return: Nothing
+ * Return: The number of characters printed.
  */
-int dtob(unsigned int n, int len)
-{
-	int binary[32] = {0};
-	int i = 0;
+int dtob(unsigned int n, int len) {
+    int binary[32] = {0};
+    int i = 0;
 
-	if (n == 0)
-	{
-		print_char('0');
-		len++;
-		return (len);
-	}
+    if (n == 0) {
+        binary[i] = 0;
+        i++;
+    }
 
-	while (n > 0)
-	{
-		binary[i] = n % 2;
-		n /= 2;
-		i++;
-	}
+    while (n > 0) {
+        binary[i] = n % 2;
+        n /= 2;
+        i++;
+    }
 
-	while (i > 0)
-	{
-		i--;
-		print_char('0' + binary[i]);
-		len++;
-	}
+    int totalChars = i;
 
-	return (len);
+    if (len) {
+        len += totalChars;
+    }
+
+    while (i > 0)
+        {
+            i--;
+            print_char('0' + binary[i]);
+        }
+    return len;
 }
