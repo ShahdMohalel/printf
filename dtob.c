@@ -8,12 +8,16 @@
  */
 int dtob(unsigned int n, int len)
 {
-    if (n < 1)
-        return (-1);
 
+    if (n == 0)
+    {
+        _putchar('0');
+        return (len + 1);
+    }
+
+    int binary = n % 2;
     len = dtob(n / 2, len);
-    int rem = n % 2;
-    print_char(rem + '0');
-    len++;
-    return len;
+    _putchar(binary + '0');
+
+    return (len + 1);
 }
