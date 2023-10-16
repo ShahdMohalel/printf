@@ -11,6 +11,8 @@ int dtob(unsigned int n, int len)
 {
     int binary[100] = {0};
     int i = 0;
+    if( n < 0)
+	    return(-1);
 
     if (n == 0)
     {
