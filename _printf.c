@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int digit;
+	unsigned int n;
 	char chr;
 	char *strarg;
 	int len = 0;
@@ -54,8 +55,9 @@ int _printf(const char *format, ...)
 						check_number(digit);
 						break;
 					case 'b':
-					    len += dtob((va_arg(args, unsigned int)), len);
-					    break;
+						n = va_arg(args, unsigned int);
+					    	len += dtob(n, len);
+					    	break;
 					default:
 						len += print_char('%');
 						len += print_char(*format);
