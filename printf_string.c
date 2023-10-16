@@ -17,8 +17,6 @@ int printf_string(va_list args, int len)
 	if (*str == NULL)
 	{
 		str = "(null)";
-		while(*str != '\0')
-			write(1, &c, 1);
 	}
 	for (i = 0; str[i] != '\0'; i++)
 	{
