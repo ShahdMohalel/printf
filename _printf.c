@@ -9,49 +9,33 @@
  *@format: format of string.
  *return: length of string
  */
-int _printf(const char *format, ...)
-{
-	int len = 0;
-	int i = 0;
+int _printf(const char *format, ...) {
+    int len = 0;
+    va_list args;
+    va_start(args, format);
 
-	va_list args;
+    while (*format != '\0') {
+        if (*format == '%') {
+            format++;
+            if (*format == '\0') {
+                _putchar('%');
+                va_end(args);
+                return (1);
+            }
 
-	va_start(args, format);
+            if (*format == '%') {
+                _putchar('%');
+                len++;
+            } else {
+                len = switcher(format, args, len);
+            }
+        } else {
+            _putchar(*format);
+            len++;
+        }
+        format++;
+    }
 
-	while (*format != '\0')
-	{
-		if (*format == '%')
-		{
-			format++;
-			len = switcher(format, args, len);
-
-			if (len == '\0')
-			{
-				if (format[i + 1] == '%')
-	            {
-		            write(1, &format[i+1], 1);
-		            return (1);
-	            }
-	            else
-    	        {
-	    	    write(1, &format[i], 1);
-	    	    write(1, &format[i+1], 1);
-	    	    return (2);
-	            }
-			}
-			else
-			{
-			    i++;
-			    format++;
-		    }
-		}
-		else
-		{
-			_putchar(*format);
-			len++;
-			format++;
-		}
-	}
-	va_end(args);
-	return (len);
+    va_end(args);
+    return len;
 }

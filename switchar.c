@@ -7,7 +7,6 @@
  * @format: the format specifier
  * Return: printed charcaters
  */
-
 int switcher(const char *format, va_list args, int len)
 {
 	if(*format)
