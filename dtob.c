@@ -12,12 +12,11 @@ int dtob(unsigned int n, int len)
     int binary[100] = {0};
     int i = 0;
 
-    if(!n)
-	    return(-1);
-
     if (n == 0)
     {
         binary[i] = 0;
+	if(binary[0] == 0 && binary[1] == '\0')
+		return (-1);
         i++;
     }
 
