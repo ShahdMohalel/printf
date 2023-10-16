@@ -2,47 +2,18 @@
 
 /**
  * switcher - selects the appropriate specifiers
- * @args: number of arguements
- * @len: length printed characters
- * @format: the format specifier
+ * @st: number of arguements
+ * @args: length printed characters
  * Return: printed charcaters
  */
-int switcher(const char *format, va_list args, int len)
+int switcher(t_list *st, const char *args)
 {
-	while(format)
+	if(args[st->i] == 'c')
 	{
-		if(format == 'c')
-		{
-			_putchar(va_arg(args, char));
-			len++;
-		}
-		else if(format == '%')
-		{
-			_putchar('%');
-			len++l
-		}
-		else if(format == 's')
-			printf_str(args, len);
-
+		write(1, &format[st->i], 1);
+		*i++;
+		*len++;
 	}
+	else if(args[st->i] == 's')
+		printf_str(va_arg(st->args,char *), 1, &st->ret, &st->i);
 }
-/**
- * printf_str - print strings
- * @args: number of arguements
- * @len: length printed characters
- * Return: printed charcaters
- */
-int printf_str(va_list args, int len)
-{
-	char *str = va_arg(args, char *);
-
-	while (*string != '\0')
-	{
-		_putchar(*str);
-		len++;
-		str++;
-	}
-	return (len);
-}
-
-

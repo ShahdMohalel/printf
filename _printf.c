@@ -11,30 +11,34 @@
  */
 int _printf(const char *format, ...)
 {
-	int len = 0;
-	va_list args;
-	va_start(args, format);
+	t_list *st;
+	int len = 0, length;
+	st = (t_list *)malloc(sizeof(t_list));
+	st->i = 0;
+	st->ret = 0;
+	va_start(st->args, format);
 
-	if(!format || (format[0] == '%' && !format[1]))
-		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
-
-	while(*format != '\0')
+	while(format[st->i])
 	{
-		if (*format == '%')
+		if(format[st->i] == '%')
 		{
-			format++;
-			switcher(format, args, len);
-			format++;
+			if(format[++st->i] == '%')
+			{
+				write(1, &format[st->i], 1);
+				*i++;
+				*len++;
+			}
+			else
+				switcher(st, format);
 		}
 		else
 		{
-			_putchar(*format);
-			len++;
-			format++;
+			write(1, &format[st->i++], 1);
+			*len++;
 		}
 	}
-	va_end(args);
-	return (len);
+	va_end(st->args);
+	length = st->len;
+	free(st);
+	return (length);
 }
