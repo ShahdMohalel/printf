@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * selector - selects the appropriate specifiers
+ * switcher - selects the appropriate specifiers
  * @args: number of arguements
- * @printed: the printed characters
+ * @len: the printed characters
  * @format: the format specifier
  * Return: printed charcaters
  */
 
-int selector(const char *format, va_list args, int printed)
+int switcher(const char *format, va_list args, int len)
 {
 	if(*format)
 	{
