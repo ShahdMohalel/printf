@@ -9,10 +9,12 @@
 int dtob(unsigned int n)
 {
     int l = 0;
-    if(n > 1)
-        dtob(n/2);
+    if (n > 1)
+    {
+        l += dtob(n / 2);
+    }
     int rem = n % 2;
-    l++;
     print_char(rem + '0');
-    return (l);
+    l++;
+    return l;
 }
