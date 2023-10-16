@@ -28,7 +28,7 @@ int dtob(unsigned int n, int len)
     }
 
     binary[i] = '\0';
-.
+
     int middle = i / 2;
     for (int x = 0; x < middle; x++)
     {
