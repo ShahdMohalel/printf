@@ -8,16 +8,29 @@
  */
 int dtob(unsigned int n, int len)
 {
+	int binary[32] = {0};
+	int i = 0;
 
-    if (n == 0)
-    {
-        print_char('0');
-        return (len + 1);
-    }
+	if (n == 0)
+	{
+		print_char('0');
+		len++;
+		return (len);
+	}
 
-    int binary = n % 2;
-    len = dtob(n / 2, len);
-    print_char(binary + '0');
+	while (n > 0)
+	{
+		binary[i] = n % 2;
+		n /= 2;
+		i++;
+	}
 
-    return (len + 1);
+	while (i > 0)
+	{
+		i--;
+		print_char('0' + binary[i]);
+		len++;
+	}
+
+	return (len);
 }
