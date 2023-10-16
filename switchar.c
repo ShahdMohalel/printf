@@ -10,7 +10,7 @@
 
 int switcher(const char *format, va_list args, int len)
 {
-	while(*format)
+	if(*format)
 	{
 		if(*format == 'c')
 		{
@@ -31,7 +31,7 @@ int switcher(const char *format, va_list args, int len)
 	            _putchar(*format);
         	    len += 2;
 	        }
-		
+		format++;
 	}
 	return (len);
 }
