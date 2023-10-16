@@ -27,8 +27,8 @@ int switcher(const char *format, va_list args, int len)
        		}
         	else
         	{
-            		_putchar('%');
-	            _putchar(format);
+			_putchar('%');
+	            _putchar(*format);
         	    len += 2;
 	        }
 	}
