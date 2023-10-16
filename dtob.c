@@ -32,7 +32,7 @@ int dtob(unsigned long int n, int len)
 		return (1);
 	}
 
-	while (n > 0)
+	while (n > 0 || n > INT_MAX)
 	{
 		binary[i] = n % 2;
 		n /= 2;
