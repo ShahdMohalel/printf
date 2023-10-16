@@ -29,8 +29,6 @@ int dtob(unsigned long int n, int len)
 	if (n == 0)
 	{
 		print_char('0');
-		len++;
-		return (len);
 	}
 
 	while (n > 0 || n > INT_MAX)
