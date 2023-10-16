@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int digit;
-	unsigned long int n;
+	unsigned int n;
 	char chr;
 	char *strarg;
 	int len = 0;
@@ -55,7 +55,7 @@ int _printf(const char *format, ...)
 						check_number(digit);
 						break;
 					case 'b':
-						n = va_arg(args, unsigned long int);
+						n = va_arg(args, unsigned int);
 					    	len += dtob(n, len);
 					    	break;
 					default:
