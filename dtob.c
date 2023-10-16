@@ -9,10 +9,10 @@
  */
 int dtob(unsigned int n, int len)
 {
-	int binary[32] = {0};
+	int binary[100] = {0};
 	int i = 0;
 
-	if (n == UINT_MAX)
+	if (n == INT_MAX)
 	{
 		int max_digits[32];
     		for (i = 0; i < 32; i++)
