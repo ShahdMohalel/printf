@@ -19,11 +19,18 @@ int switcher(const char *format, va_list args, int len)
 		}
 		else if(*format == 's')
 			len = printf_string(args, len);
-		else
-		{
-			_putchar('%');
-			len++;
-		}
+
+		else if (*format == '%')
+        	{
+        	    	_putchar('%');
+		            len++;
+       		}
+        	else
+        	{
+            		_putchar('%');
+	            _putchar(format);
+        	    len += 2;
+	        }
 	}
 	return (len);
 }
