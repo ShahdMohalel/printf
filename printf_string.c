@@ -1,34 +1,27 @@
 #include "main.h"
-
 /**
- * printf_string - prints a string
- * @args: numberof arguements
- * @len: the printed characters
- * Return: printed charcaters
+ *print_string - prints a string to stdout,1 char at a time
+ *
+ *@args: args to increment
+ *@len: length
+ *
+ *Return:no of char printed
  */
-
-int printf_string(va_list args, int len)
+int printf_string(va_list args, len)
 {
-	char *str = va_arg(args, char *);
+	char *str;
+	int i;
+	char c;
 
-	int x = 0;
-	char *nl = "(null)";
-	if (*str == '\0')
+	str = va_arg(args, char *);
+	if (str == NULL)
+		str = "(null)";
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		while (x < 6)
-		{
-			_putchar(nl[x]);
-			x++;
-		}
-	}
-	else
-	{
-		while (*str != '\0')
-		{
-			_putchar(*str);
-			len++;
-			str++;
-		}
+		c = str[i];
+		write(1, &c, 1);
+		len++;
 	}
 	return (len);
 }
+
