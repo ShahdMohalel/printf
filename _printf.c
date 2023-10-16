@@ -11,27 +11,27 @@
  */
 int _printf(const char *format, ...)
 {
-	t_list *st;
-	int length;
-	st = (t_list *)malloc(sizeof(t_list));
-	st->i = 0;
-	st->ret = 0;
-	va_start(st->args, format);
+	int len= 0;
 
-	while(format[st->i])
+	va_list args;
+
+	va_start(args, format);
+
+	while (*format != '\0')
 	{
-		if(format[st->i] == '%')
+		if (*format == '%')
 		{
-			if(format[++st->i] == '%')
-				_putchar(format[st->i], 1, &st->ret, &st->i);
-			else
-				switcher(st, format);
+			format++;
+			printed = selector(format, args, len);
+			format++;
 		}
 		else
-			_putcharfd(format[st->i++], 1, &st->ret);
+		{
+			_putchar(*format);
+			len++;
+			format++;
+		}
 	}
-	va_end(st->args);
-	length = st->ret;
-	free(st);
-	return (length);
+	va_end(args);
+	return (len);
 }

@@ -1,21 +1,29 @@
 #include "main.h"
 
 /**
- * switcher - selects the appropriate specifiers
- * @st: number of arguements
- * @args: length printed characters
+ * selector - selects the appropriate specifiers
+ * @args: number of arguements
+ * @printed: the printed characters
+ * @format: the format specifier
  * Return: printed charcaters
  */
-int switcher(t_list *st, const char *args)
+
+int selector(const char *format, va_list args, int printed)
 {
-	if(args[st->i] == 'c')
+	if(*format)
 	{
-		write(1, &format[st->i], 1);
-		*i++;
-		*len++;
+		if(format == 'c')
+		{
+			_putchar(va_arg(args, int));
+			len++;
+		}
+		else if(format == 's')
+			len = printf_string(args, len);
+		else
+		{
+			_putchar('%');
+			len++;
+		}
 	}
-	else if(args[st->i] == 's')
-		printf_str(va_arg(st->args,char *), 1, &st->ret, &st->i);
-	else
-		return(0);
+	return (len);
 }
