@@ -9,15 +9,29 @@
  */
 int dtob(unsigned long int n, int len)
 {
+    
+    int binary[64];  // Use a larger array to accommodate long values
+    int i = 0;
+    
+    if (n == INT_MAX)
+	{
+		int max_digits[32];
+    		for (i = 0; i < 32; i++)
+    		{
+        		max_digits[i] = 1;
+    		}
+		for (i = 31; i >= 0; i--)
+    		{
+        		print_char(max_digits[i] + '0');
+    		}
+    		len += 32;
+	}
     if (n == 0)
     {
         print_char('0');
         len++;
         return len;
     }
-
-    int binary[64];  // Use a larger array to accommodate long values
-    int i = 0;
 
     while (n > 0)
     {
