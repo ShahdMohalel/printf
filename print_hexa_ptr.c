@@ -12,7 +12,7 @@ unsigned long int temp = n;
 while (n / 16 != 0)
 {
 n /= 16;
-        len++;
+len++;
     }
     len++;
     x = malloc(len * sizeof(long int));
