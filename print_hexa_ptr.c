@@ -16,7 +16,6 @@ len++;
 }
 len++;
 x = malloc(len * sizeof(long int));
-
     for (i = 0; i < len; i++)
     {
         x[i] = temp % 16;
