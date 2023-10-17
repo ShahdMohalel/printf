@@ -20,8 +20,8 @@ for (i = 0; i < len; i++)
 {
 x[i] = temp % 16;
 temp /= 16;
-    }
-    for (i = len - 1; i >= 0; i--)
+}
+for (i = len - 1; i >= 0; i--)
     {
         if (x[i] > 9)
             x[i] = x[i] + 39;
