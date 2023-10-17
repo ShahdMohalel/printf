@@ -16,9 +16,7 @@ int (*get_func(char s))(va_list, flags_t *)
     
 	func_t func_arr[] = {
 		{'s', print_string},
-		{'c', print_char},
-		{'i', print_int},
-		{'d', print_int}
+		{'c', print_char}
 		};
 
 	for (i = 0; i < flags; i++)

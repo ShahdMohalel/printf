@@ -11,7 +11,7 @@
 int _printf(const char *format, ...)
 {
 	int (*pfunc)(va_list, flags_t *);
-	char *p;
+	const char *p;
 	va_list args;
 	flags_t flags = {0, 0, 0};
 
