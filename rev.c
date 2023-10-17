@@ -6,17 +6,13 @@
  */
 int rev(va_list args)
 {
-    int i = 0, j;
-    char *s = va_arg(args, char *);
-
-    if (!s)
-        s = "(null)";
-
-    while (s[i])
-        i++;
-
-    for (j = i - 1; j >= 0; j--)
-        _putchar(s[j]);
-
-    return (i);
+int i = 0, j;
+char *s = va_arg(args, char *);
+if (!s)
+s = "(null)";
+while (s[i])
+i++;
+for (j = i - 1; j >= 0; j--)
+_putchar(s[j]);
+return (i);
 }
