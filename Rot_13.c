@@ -17,7 +17,7 @@ int print_rot13(va_list args)
         return (-1);
     for (i = 0; str[i] != '\0'; i++)
     {
-        for (x = 0; x <= 52; x++)
+        for (x = 0; x < 52; x++)
         {
             if (str[i] == s[x])
             {
