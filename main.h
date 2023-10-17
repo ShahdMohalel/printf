@@ -30,4 +30,6 @@ int print_percent(va_list);
 int print_char(va_list);
 int print_string(va_list);
 int _puts(char *str);
+void hexadecimal(unsigned int num);
+void _sprintf(char *str);
 #endif
