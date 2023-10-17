@@ -1,12 +1,5 @@
 #include "main.h"
 /**
-*print_rot13 - prints a string using rot13
-*@args: args
-*Return: length
-*/
-#include "main.h"
-
-/**
  * print_rot13 - prints a string using rot13
  * @args: args
  * Return: length
