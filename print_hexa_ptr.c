@@ -11,7 +11,7 @@ long int *x;
 unsigned long int temp = n;
 while (n / 16 != 0)
 {
-        n /= 16;
+n /= 16;
         len++;
     }
     len++;
