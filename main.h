@@ -1,19 +1,46 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
-#include <math.h>
 #include <limits.h>
+#include <stdio.h>
 
-int print_char(char any_char);
-int print_string(char *text);
-int printf_integer(va_list args, int len);
+typedef struct flags
+{
+	int plus;
+	int space;
+	int hash;
+} flags_t;
+
+typedef struct func
+{
+	char c;
+	int (*f)(va_list ap, flags_t *f);
+} func_t;
+
+/* print_nums.c */
+int print_int(va_list args, flags_t *f);
+void print_num(int n);
+int print_unsigned(va_list args, flags_t *f);
+int count(int i);
+
+/* _printf.c */
 int _printf(const char *format, ...);
-int getNumberLength(int myNum);
-void check_number(int n);
-int dtob(unsigned long int n, int len);
-void hexadecimal(unsigned int num);
-void _sprintf(char *str);
+
+/* get_func.c */
+int (*get_func(char s))(va_list, flags_t *);
+
+/* get_flag.c */
+int get_flag(char s, flags_t *f);
+
+/* sentence.c */
+int print_string(va_list args, flags_t *f);
+int print_char(va_list args, flags_t *f);
+
+/* write.c */
+int _putchar(char c);
+int _puts(char *str);
+
 #endif

@@ -1,76 +1,46 @@
 #include "main.h"
+#include <limits.h>
+#include <stdio.h>
 
 /**
- * _printf - The printf function clone
- * @format: a constant pointer to a char
- *
- * Return: the size of the printed args
+ * _printf - produces output according to a format
+ * @format: format string containing the characters and the specifiers
+ * Description: this function will call the get_func()
+ * Return: length of the formatted output string
  */
-
 int _printf(const char *format, ...)
 {
+	int (*pfunc)(va_list, flags_t *);
+	char *p;
 	va_list args;
-	int digit;
-	unsigned int n;
-	char chr;
-	char *strarg;
+	flags_t flags = {0, 0, 0};
+
 	int len = 0;
 
 	va_start(args, format);
-	if (!format)
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
-	while (*format)
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+	for (p = format; *p; p++)
 	{
-		if (*format == '%')
+		if (*p == '%')
 		{
-			format++;
-			if (*format == '%')
+			p++;
+			if (*p == '%')
 			{
-				len += print_char('%');
+				len += _putchar('%');
+				continue;
 			}
-			else if (*format == '\0')
-			{
-				break;
-			}
-			else
-			{
-				switch (*format)
-				{
-					case 'c':
-						chr = (va_arg(args, int));
-						len += print_char(chr);
-						break;
-					case 's':
-						strarg = (va_arg(args, char *));
-						len += print_string(strarg);
-						break;
-					case 'd':
-					case 'i':
-						digit = va_arg(args, int);
-						if (digit < 0)
-						{
-							len++;
-						}
-						len += getNumberLength(digit);
-						check_number(digit);
-						break;
-					case 'b':
-						n = va_arg(args, unsigned int);
-					    	len += dtob(n, len);
-					    	break;
-					default:
-						len += print_char('%');
-						len += print_char(*format);
-						break;
-				}
-			}
-		}
-		else
-		{
-			len += print_char(*format);
-		}
-		format++;
+			while (get_flag(*p, &flags))
+				p++;
+			pfunc = get_func(*p);
+			len += (pfunc)
+				? pfunc(args, &flags) : _printf("%%%c", *p);
+		} else
+			len += _putchar(*p);
 	}
+	_putchar(-1);
 	va_end(args);
 	return (len);
 }
