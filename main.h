@@ -32,4 +32,6 @@ int print_string(va_list);
 int print_num(va_list args);
 int print_integer(va_list args);
 int _puts(char *str);
+void hexadecimal(unsigned int num);
+void _sprintf(char *str);
 #endif

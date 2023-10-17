@@ -13,9 +13,13 @@ int _printf(const char *format, ...)
 	conver_t f_list[] = {
 		{"%", print_percent},
 		{"c", print_char},
+<<<<<<< HEAD
 		{"s", print_string},
 		{"i", print_integer},
 		{"d", print_integer},
+=======
+		{"s", print_string}, 
+>>>>>>> 5972e6d2ed19998ebe4b9ad5fa277320e520d2a2
 		{NULL, NULL}
 	};
 	va_list arg_list;
