@@ -27,6 +27,6 @@ if (x[i] > 9)
 x[i] = x[i] + 39;
 _putchar(x[i] + '0');
 }
-    free(x);
+free(x);
     return (len);
 }
