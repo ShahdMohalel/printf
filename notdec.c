@@ -54,7 +54,7 @@ char *rev_string(char *s)
 	for (x = 0; x < len; x++, len--)
 	{
 		c = dest[len - 1];
-		c[len - 1] = dest[x];
+		dest[len - 1] = dest[x];
 		dest[x] = c;
 	}
 	return (dest);
