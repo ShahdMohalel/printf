@@ -7,38 +7,34 @@
 int print_oct(va_list args)
 {
 	unsigned int n;
-	int i, len;
-	char *str;
+	int len;
+	char *octal;
 	char *rev_str;
 
-	n = va_arg(args, unsigned int);
-	if (n == NULL)
+	n = va_arg(list, unsigned int);
+
+	if (n == 0)
 		return (_putchar('0'));
 	if (n < 1)
 		return (-1);
+	len = base(n, 8);
 
-	len = base(n / 8);
-	str = malloc(sizeof(char) * len + 1);
-	if (str == NULL)
+	octal = malloc(sizeof(char) * len + 1);
+	if (octal == NULL)
 		return (-1);
-
-	for (i = 0; n > 0; i++)
+	for (len = 0; n > 0; len++)
 	{
-		if(n % 8)
-			str[i] = '0';
-		else
-			str[i] = '1';
+		octal[len] = (n % 8) + 48;
+		n = n / 8;
 
-		n /= 8;
 	}
-
-	str[len] = '\0';
-	rev_str = rev_string(str);
-
+	octal[len] = '\0';
+	rev_str = rev_string(octal);
 	if (rev_str == NULL)
 		return (-1);
+
 	write_base(rev_str);
-	free(str);
+	free(octal);
 	free(rev_str);
 	return (len);
 }
