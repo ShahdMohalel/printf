@@ -59,6 +59,7 @@ x[i] = temp % 16;
 temp /= 16;
 }
 for (i = len - 1; i >= 0; i--)
+<<<<<<< HEAD
     {
         if (x[i] > 9)
             x[i] = x[i] + 39;
@@ -68,4 +69,13 @@ for (i = len - 1; i >= 0; i--)
 
     free(array);
     return counter;
+=======
+{
+if (x[i] > 9)
+x[i] = x[i] + 39;
+_putchar(x[i] + '0');
+}
+    free(x);
+    return (len);
+>>>>>>> bde9e7bcda82159432ecf1b4a26a2736c1441c39
 }
