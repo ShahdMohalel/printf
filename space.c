@@ -9,7 +9,7 @@ int space(va_list args)
     int len = 0;
     int num;
     num = va_arg(args, int);
-    if (num <0)
+    if (num < 0)
     {
         putchar('-');
         len++;
