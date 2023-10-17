@@ -2,13 +2,8 @@
 int plus(va_list args)
 {
     int len = 0;
-    int i;
     int number;
-    number = va_args(args, int);
-    if (number == NULL)
-    {
-        return (0);
-    }
+    number = va_arg(args, int);
     if (number > 0)
     {
         putchar('+');
