@@ -1,46 +1,28 @@
 #include "main.h"
-#include <limits.h>
-#include <stdio.h>
 
 /**
- * _printf - produces output according to a format
- * @format: format string containing the characters and the specifiers
- * Description: this function will call the get_func()
- * Return: length of the formatted output string
+ * _printf - Receives the main string and all the necessary parameters to
+ * print a formated string
+ * @format: A string containing all the desired characters
+ * Return: A total count of the characters printed
  */
+
 int _printf(const char *format, ...)
 {
-	int (*pfunc)(va_list, flags_t *);
-	const char *p;
-	va_list args;
-	flags_t flags = {0, 0, 0};
+	int printed_chars;
+	conver_t f_list[] = {
+		{"%", print_percent},
+		{"c", print_char},
+		{"s", print_string},
+		{NULL, NULL}
+	};
+	va_list arg_list;
 
-	int len = 0;
+	if (format == NULL)
+		return (-1);
 
-	va_start(args, format);
-	if (!format || (format[0] == '%' && !format[1]))
-		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
-	for (p = format; *p; p++)
-	{
-		if (*p == '%')
-		{
-			p++;
-			if (*p == '%')
-			{
-				len += _putchar('%');
-				continue;
-			}
-			while (get_flag(*p, &flags))
-				p++;
-			pfunc = get_func(*p);
-			len += (pfunc)
-				? pfunc(args, &flags) : _printf("%%%c", *p);
-		} else
-			len += _putchar(*p);
-	}
-	_putchar(-1);
-	va_end(args);
-	return (len);
+	va_start(arg_list, format);
+	printed_chars = format_reciever(format, f_list, arg_list);
+	va_end(arg_list);
+	return (printed_chars);
 }

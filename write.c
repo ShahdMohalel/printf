@@ -1,16 +1,18 @@
 #include "main.h"
-#include <unistd.h>
+
 /**
- *_putchar - writes a character to stdout
- *@c:charcter to print
- *Return:1 - on success, -1 on error
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
  *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
 int _putchar(char c)
 {
-	write(1, &c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }
+
+
 /**
  * _puts - prints a string to stdout
  * @str: pointer to the string to print
@@ -18,9 +20,9 @@ int _putchar(char c)
  */
 int _puts(char *str)
 {
-	int i;
+	register short i;
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i]; i++)
 		_putchar(str[i]);
 	return (i);
 }
