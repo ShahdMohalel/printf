@@ -6,6 +6,7 @@ Return: len
 */
 int print_hexptr(unsigned long int n)
 {
+<<<<<<< HEAD
 	unsigned int *array;
     int counter = 0, i;
     unsigned long int temp = n;
@@ -16,6 +17,21 @@ int print_hexptr(unsigned long int n)
     }
 
     while (temp > 0) {
+=======
+long int i, len = 0;
+long int *x;
+unsigned long int temp = n;
+while (n / 16 != 0)
+{
+n /= 16;
+len++;
+}
+len++;
+x = malloc(len * sizeof(long int));
+for (i = 0; i < len; i++)
+{
+x[i] = temp % 16;
+>>>>>>> a163123c5156b81aa8e53b941ffaf5a6c6976055
         temp /= 16;
         counter++;
     }
