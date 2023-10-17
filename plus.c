@@ -1,4 +1,9 @@
 #include "main.h"
+/**
+ * plus - Print sign.
+ * @args: string.
+ * Return: len.
+ */
 int plus(va_list args)
 {
     int len = 0;
