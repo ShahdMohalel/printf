@@ -75,7 +75,12 @@ if (x[i] > 9)
 x[i] = x[i] + 39;
 _putchar(x[i] + '0');
 }
+<<<<<<< HEAD
     free(x);
     return (len);
 >>>>>>> bde9e7bcda82159432ecf1b4a26a2736c1441c39
+=======
+free(x);
+return (len);
+>>>>>>> 1c951cc091fef1f09637413a82831adbe8e33faa
 }
