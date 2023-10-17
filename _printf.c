@@ -20,6 +20,7 @@ int _printf(const char *format, ...)
 		{"o", print_oct},
 		{"u", print_un},
 		{"S", _sprintf},
+		{"x", print_lh},
 		{NULL, NULL}
 	};
 	va_list arg_list;
