@@ -10,12 +10,21 @@
 int print_str(va_list args, flags_t *f)
 {
 	char *s = va_arg(args, char *);
-
-	(void)f;
-
+	while (s != '\0')
+	{
+		len += _putchar(*s);
+		s++;
+	}
 	if (!s)
+	{
 		s = "(null)";
-	return (_puts(s));
+		while(s)
+		{
+			len += _putchar(*s);
+			s++;
+		}
+	}
+	return (len);
 }
 
 /**
