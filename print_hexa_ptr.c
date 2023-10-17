@@ -1,12 +1,9 @@
 #include "main.h"
-
 /**
- 
 print_hexptr - prints
 @n: args
 Return: len
 */
-
 int print_hexptr(unsigned long int n)
 {
     long int i, len = 0;
