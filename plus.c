@@ -7,11 +7,7 @@
 int plus(va_list args)
 {
     int len = 0;
-    long number;
-    if (va_arg(args, int)
-    {
-         return (0);
-    }
+    int number;
     number = va_arg(args, int);
     if (number > 0)
     {
