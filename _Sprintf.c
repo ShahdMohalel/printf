@@ -33,6 +33,5 @@ hexlen = hexadecimal((unsigned int)str[i]);
 }
 }
 len = len + hexlen;
-_putchar('\n');
 return (len);
 }
