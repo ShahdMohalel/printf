@@ -16,7 +16,6 @@ int _printf(const char *format, ...)
 		{"s", print_string},
 		{"i", print_integer},
 		{"d", print_integer},
-		{"S", _sprintf},
 		{"b", print_binary},
 		{"o", print_oct},
 		{"u", print_un},

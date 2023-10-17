@@ -5,7 +5,7 @@
  * @str: string.
  * Return: no return.
  */
-int _sprintf(va_list args)
+/*int _sprintf(va_list args)
 {
 int i;
 char *str;
@@ -34,4 +34,4 @@ hexlen = hexadecimal((unsigned int)str[i]);
 }
 len = len + hexlen;
 return (len);
-}
+}*/

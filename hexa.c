@@ -4,7 +4,7 @@
  * @num: number.
  * Return: no return.
  */
-int hexadecimal(unsigned int num)
+/*int hexadecimal(unsigned int num)
 {
 int len = 0;
 int remain;
@@ -47,4 +47,4 @@ len++;
 }
 
 return(len++);
-}
+}*/
