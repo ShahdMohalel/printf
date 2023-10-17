@@ -22,7 +22,8 @@ int _printf(const char *format, ...)
 		{"x", print_lh},
 		{"X", print_uh},
 		{"+", plus},
-		{NULL, NULL}
+		{NULL, NULL},
+		{"R", print_rot13}
 	};
 	va_list arg_list;
 
