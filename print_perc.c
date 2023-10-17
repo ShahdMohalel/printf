@@ -2,7 +2,7 @@
 
 /**
  * print_percent - Prints a percent symbol
- * @len: arguments
+ * @args: arguments
  * Return: Will return the amount of characters printed.
  */
 int print_percent(__attribute__((unused))va_list args)
