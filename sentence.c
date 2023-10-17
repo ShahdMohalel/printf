@@ -9,6 +9,7 @@
  */
 int print_str(va_list args, flags_t *f)
 {
+	(void)f;
 	char *s = va_arg(args, char *);
 	while (s != '\0')
 	{
