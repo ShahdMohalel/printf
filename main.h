@@ -32,6 +32,7 @@ int print_string(va_list);
 int print_num(va_list args);
 int print_integer(va_list args);
 int _puts(char *str);
+int print_binary(va_list);
 int hexadecimal(unsigned int num);
 int _sprintf(va_list args);
 #endif

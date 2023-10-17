@@ -45,5 +45,6 @@ default:
 _putchar('0' + remain);
 len++;
 }
+
 return(len++);
 }
