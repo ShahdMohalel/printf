@@ -10,7 +10,7 @@ Return: len
 int print_hexptr(unsigned long int n)
 {
     long int i, len = 0;
-    long int x;
+    long int *x;
     unsigned long int temp = n;
 
     while (n / 16 != 0)
