@@ -20,6 +20,7 @@ int _printf(const char *format, ...)
 		{"u", print_un},
 		{"S", _sprintf},
 		{"x", print_lh},
+		{"X", print_uh},
 		{"+", plus},
 		{NULL, NULL}
 	};
