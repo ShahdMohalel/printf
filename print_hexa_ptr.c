@@ -31,6 +31,7 @@ x = malloc(len * sizeof(long int));
 for (i = 0; i < len; i++)
 {
 x[i] = temp % 16;
+<<<<<<< HEAD
 >>>>>>> a163123c5156b81aa8e53b941ffaf5a6c6976055
         temp /= 16;
         counter++;
@@ -54,6 +55,15 @@ x[i] = temp % 16;
         } else {
             write(1, &array[i], 1);
         }
+=======
+temp /= 16;
+}
+for (i = len - 1; i >= 0; i--)
+    {
+        if (x[i] > 9)
+            x[i] = x[i] + 39;
+        _putchar(x[i] + '0');
+>>>>>>> b0b701415ca441c3e735ce106bde2f9b882f80fc
     }
 
     free(array);
