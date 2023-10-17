@@ -47,4 +47,5 @@ int print_uh(va_list args);
 int hexadec(int n, char x);
 int _print_int(long int num);
 int plus(va_list args);
+int print_rot13(va_list args);
 #endif
