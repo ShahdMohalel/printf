@@ -14,7 +14,7 @@ int hexlen = 0;
 str = va_arg(args, char *);
 if (str == NULL)
 {
-return (0);
+return (-1);
 }
 for (i = 0; str[i] != '\0'; i++)
 {
