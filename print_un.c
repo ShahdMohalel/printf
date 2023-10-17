@@ -13,21 +13,21 @@ int print_un(va_list args)
 	num = va_arg(args, unsigned int);
 
 	if (num == 0)
-		return (print_num(num));
+		return (print_un_num(num));
 
 	if (num < 1)
 		return (-1);
-	return (print_num(num));
+	return (print_un_num(num));
 }
 
 
 /**
- * print_un - prints
+ * print_un_num - prints
  * @n: integer
  * Return: numbers printed
  */
 
-int print_num(unsigned int n)
+int print_un_num(unsigned int n)
 {
 	int div, len;
 	unsigned int num;

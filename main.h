@@ -40,6 +40,6 @@ void write_base(char *str);
 char *rev_string(char *s);
 char *_memcpy(char *dest, char *src, unsigned int n);
 int print_oct(va_list);
-int print_num(unsigned int n);
+int print_un_num(unsigned int n);
 int print_un(va_list args);
 #endif
