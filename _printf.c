@@ -6,7 +6,6 @@
  * @format: A string containing all the desired characters
  * Return: A total count of the characters printed
  */
-
 int _printf(const char *format, ...)
 {
 	int len;
