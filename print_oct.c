@@ -11,7 +11,7 @@ int print_oct(va_list args)
 	char *octal;
 	char *rev_str;
 
-	n = va_arg(list, unsigned int);
+	n = va_arg(args, unsigned int);
 
 	if (n == 0)
 		return (_putchar('0'));
