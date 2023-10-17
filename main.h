@@ -42,4 +42,5 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 int print_oct(va_list);
 int print_un_num(unsigned int n);
 int print_un(va_list args);
+int _print_int(long int num);
 #endif
