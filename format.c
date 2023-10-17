@@ -29,7 +29,7 @@ int format_reciever(const char *format, conver_t f_list[], va_list arg_list)
 					break;
 				}
 			}
-			if (f_list[j].sym == NULL && format[i + 1] != ' ')
+			if (f_list[j].sym == NULL)
 			{
 				if (format[i + 1] != '\0')
 				{
