@@ -11,7 +11,7 @@
 
 int format_reciever(const char *format, conver_t f_list[], va_list arg_list)
 {
-	int i, j, r_val, printed_chars;
+	int i, j, r_val, len;
 
 	len = 0;
 	for (i = 0; format[i] != '\0'; i++)
