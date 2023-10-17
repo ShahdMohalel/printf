@@ -51,5 +51,5 @@ int print_rot13(va_list args);
 int rev(va_list args);
 int space(va_list args);
 int print_ptr(va_list args);
-int print_hexptr(unsigned long int n);
+int print_hexptr(unsigned long int n)
 #endif
