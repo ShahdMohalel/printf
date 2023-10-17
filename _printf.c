@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	int printed_chars;
+	int len;
 	conver_t f_list[] = {
 		{"%", print_percent},
 		{"c", print_char},
@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(arg_list, format);
-	printed_chars = format_reciever(format, f_list, arg_list);
+	len = format_reciever(format, f_list, arg_list);
 	va_end(arg_list);
-	return (printed_chars);
+	return (len);
 }
