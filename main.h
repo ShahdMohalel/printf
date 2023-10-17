@@ -17,7 +17,7 @@ typedef struct flags
 typedef struct func
 {
 	char c;
-	int (*f)(va_list ap, flags_t *f);
+	int (*f)(va_list args, flags_t *f);
 } func_t;
 
 /* print_nums.c */
@@ -36,7 +36,7 @@ int (*get_func(char s))(va_list, flags_t *);
 int get_flag(char s, flags_t *f);
 
 /* sentence.c */
-int print_string(va_list args, flags_t *f);
+int print_str(va_list args, flags_t *f);
 int print_char(va_list args, flags_t *f);
 
 /* write.c */
