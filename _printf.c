@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 		{"b", print_binary},
 		{"o", print_oct},
 		{"u", print_un},
-		{"S", _Sprintf},
+		{"S", _sprintf},
 		{NULL, NULL}
 	};
 	va_list arg_list;
