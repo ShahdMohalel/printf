@@ -25,8 +25,8 @@ for (i = len - 1; i >= 0; i--)
 {
 if (x[i] > 9)
 x[i] = x[i] + 39;
-        _putchar(x[i] + '0');
-    }
+_putchar(x[i] + '0');
+}
     free(x);
     return (len);
 }
