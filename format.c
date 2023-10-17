@@ -11,9 +11,9 @@
 
 int format_reciever(const char *format, conver_t f_list[], va_list arg_list)
 {
-	int i, j, r_val, printed_chars;
+	int i, j, r_val, len;
 
-	printed_chars = 0;
+	len = 0;
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
@@ -25,7 +25,7 @@ int format_reciever(const char *format, conver_t f_list[], va_list arg_list)
 					r_val = f_list[j].f(arg_list);
 					if (r_val == -1)
 						return (-1);
-					printed_chars += r_val;
+					len += r_val;
 					break;
 				}
 			}
@@ -35,7 +35,7 @@ int format_reciever(const char *format, conver_t f_list[], va_list arg_list)
 				{
 					_putchar(format[i]);
 					_putchar(format[i + 1]);
-					printed_chars = printed_chars + 2;
+					len = len + 2;
 				}
 				else
 					return (-1);
@@ -45,8 +45,8 @@ int format_reciever(const char *format, conver_t f_list[], va_list arg_list)
 		else
 		{
 			_putchar(format[i]);
-			printed_chars++;
+			len++;
 		}
 	}
-	return (printed_chars);
+	return (len);
 }

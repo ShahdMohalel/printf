@@ -2,16 +2,16 @@
 
 /**
  * print_string - Prints a string
- * @list: list of arguments
+ * @args: list of arguments
  * Return: Will return the amount of characters printed.
  */
 
-int print_string(va_list list)
+int print_string(va_list args)
 {
 	int i;
 	char *str;
 
-	str = va_arg(list, char *);
+	str = va_arg(args, char *);
 	if (str == NULL)
 		str = "(null)";
 	for (i = 0; str[i] != '\0'; i++)
