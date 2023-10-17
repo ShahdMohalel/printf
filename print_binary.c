@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * print_binary - Prints a binary
+ * @args: string.
+ * Return: len.
+ */
 int print_binary(va_list args)
 {
 	unsigned int n;

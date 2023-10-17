@@ -2,8 +2,8 @@
 #include <stdlib.h>
 /**
  * _sprintf - Prints a hexa.
- * @str: string.
- * Return: no return.
+ * @args: string.
+ * Return: len.
  */
 int _sprintf(va_list args)
 {
