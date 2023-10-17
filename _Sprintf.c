@@ -21,7 +21,7 @@ else
 {
 _putchar('\\');
 _putchar('x');
-hexadecimal((unsigned int)str[i]);
+//hexadecimal((unsigned int)str[i]);
 }
 }
 }
