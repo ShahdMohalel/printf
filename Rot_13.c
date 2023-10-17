@@ -25,8 +25,9 @@ int print_rot13(va_list args)
                 break;
             }
         }
-        if (x == 53)
+        if (x == 52)
             _putchar(str[i]);
     }
     return (i);
 }
+
