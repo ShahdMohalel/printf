@@ -35,4 +35,8 @@ int _puts(char *str);
 int print_binary(va_list);
 int hexadecimal(unsigned int num);
 int _sprintf(va_list args);
+unsigned int base(unsigned int n, int base);
+void write_base(char *str);
+char *rev_string(char *s);
+char *_memcpy(char *dest, char *src, unsigned int n);
 #endif

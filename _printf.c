@@ -17,6 +17,7 @@ int _printf(const char *format, ...)
 		{"i", print_integer},
 		{"d", print_integer},
 		{"S", _sprintf},
+		{"b", print_binary},
 		{NULL, NULL}
 	};
 	va_list arg_list;
