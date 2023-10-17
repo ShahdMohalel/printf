@@ -32,7 +32,7 @@ void write_base(char *str)
 }
 
 /**
- * rev_string - reverses a string 
+ * rev_string - reverses a string
  * @s: string to reverse
  * Return: pointer
  */
@@ -43,7 +43,7 @@ char *rev_string(char *s)
 	char c;
 	char *dest;
 
-	while(s[len] != '\0')
+	while (s[len] != '\0')
 		len++;
 
 	dest = malloc(sizeof(char) * len + 1);
