@@ -6,29 +6,40 @@ Return: len
 */
 int print_hexptr(unsigned long int n)
 {
-long int i, len = 0;
-long int *x;
+	unsigned int *array;
+    int counter = 0, i;
     unsigned long int temp = n;
 
-    while (n / 16 != 0)
-    {
-        n /= 16;
-        len++;
+    if (n == 0) {
+        _putchar('0');
+        return 1;
     }
-    len++;
-    x = malloc(len * sizeof(long int));
 
-    for (i = 0; i < len; i++)
-    {
-        x[i] = temp % 16;
+    while (temp > 0) {
+        temp /= 16;
+        counter++;
+    }
+
+    array = (unsigned int *)malloc(counter * sizeof(unsigned int));
+
+    if (array == NULL) {
+        return -1;
+    }
+
+    temp = n;
+    for (i = counter - 1; i >= 0; i--) {
+        array[i] = temp % 16;
         temp /= 16;
     }
-    for (i = len - 1; i >= 0; i--)
-    {
-        if (x[i] > 9)
-            x[i] = x[i] + 39;
-        _putchar(x[i] + '0');
+
+    for (i = 0; i < counter; i++) {
+        if (array[i] >= 10) {
+            _putchar('A' + (array[i] - 10));
+        } else {
+            write(1, &array[i], 1);
+        }
     }
-    free(x);
-    return (len);
+
+    free(array);
+    return counter;
 }
