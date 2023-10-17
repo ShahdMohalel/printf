@@ -18,7 +18,7 @@ return (0);
 }
 for (i = 0; str[i] != '\0'; i++)
 {
-if (str[i] >= 32 && str[i] <= 126)
+if (str[i] >= 32 && str[i] < 127)
 {
 _putchar(str[i]);
 len++;
