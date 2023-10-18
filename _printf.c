@@ -28,10 +28,9 @@ conver_t f_list[] = {
 {NULL, NULL}
 };
 if (format == NULL)
-		return (-1);
-
-	va_start(arg_list, format);
-	len = format_reciever(format, f_list, arg_list);
-	va_end(arg_list);
-	return (len);
+return (-1);
+va_start(arg_list, format);
+len = format_reciever(format, f_list, arg_list);
+va_end(arg_list);
+return (len);
 }
