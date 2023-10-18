@@ -37,3 +37,4 @@ free(str);
 free(rev_str);
 return (len);
 }
+}
