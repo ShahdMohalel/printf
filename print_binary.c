@@ -28,12 +28,12 @@ else
 str[i] = '1';
 n = n / 2;
 }
-	str[i] = '\0';
-	rev_str = rev_string(str);
-	if (rev_str == NULL)
-		return (-1);
-	write_base(rev_str);
-	free(str);
-	free(rev_str);
-	return (len);
+str[i] = '\0';
+rev_str = rev_string(str);
+if (rev_str == NULL)
+return (-1);
+write_base(rev_str);
+free(str);
+free(rev_str);
+return (len);
 }
