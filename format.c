@@ -40,8 +40,8 @@ return (-1);
 i = i + 1;
 }
 else
-		{
-			_putchar(format[i]);
+{
+_putchar(format[i]);
 			len++;
 		}
 	}
