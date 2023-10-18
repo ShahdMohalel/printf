@@ -36,8 +36,8 @@ len = len + 2;
 }
 else
 return (-1);
-			}
-			i = i + 1;
+}
+i = i + 1;
 		}
 		else
 		{
