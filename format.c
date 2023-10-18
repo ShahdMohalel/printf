@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * format_reciever - Receives the main string and all the
  * necessary parameters to print a formated string.
@@ -8,13 +7,11 @@
  * @arg_list: A list containing all the argumentents passed to the program.
  * Return: A total count of the characters printed.
  */
-
 int format_reciever(const char *format, conver_t f_list[], va_list arg_list)
 {
-	int i, j, r_val, len;
-
-	len = 0;
-	for (i = 0; format[i] != '\0'; i++)
+int i, j, r_val, len;
+len = 0;
+for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
