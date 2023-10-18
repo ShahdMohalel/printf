@@ -24,7 +24,7 @@ if (r_val == -1)
 return (-1);
 len += r_val;
 break;
-				}
+}
 			}
 			if (f_list[j].sym == NULL && format[i + 1] != ' ')
 			{
