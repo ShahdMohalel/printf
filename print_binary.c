@@ -19,14 +19,15 @@ len = base(n, 2);
 str = malloc(sizeof(char) * len + 1);
 if (str == NULL)
 return (-1);
-	for (i = 0; n > 0; i++)
-	{
-		if (n % 2 == 0)
-			str[i] = '0';
-		else
-			str[i] = '1';
-		n = n / 2;
-	}
+for (i = 0; n > 0; i++)
+{
+if (n % 2 == 0)
+str[i] = '0';
+else
+{
+str[i] = '1';
+n = n / 2;
+}
 	str[i] = '\0';
 	rev_str = rev_string(str);
 	if (rev_str == NULL)
