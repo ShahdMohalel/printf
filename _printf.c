@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _printf - Receives the main string and all the necessary parameters to
  * print a formated string
@@ -8,7 +7,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int len;
+int len;
 	conver_t f_list[] = {
 		{"%", print_percent},
 		{"c", print_char},
