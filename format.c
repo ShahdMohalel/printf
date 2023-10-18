@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * format_reciever - Receives the main string and all the
  * necessary parameters to print a formated string.
