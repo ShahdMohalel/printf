@@ -44,6 +44,6 @@ else
 _putchar(format[i]);
 len++;
 }
-	}
-	return (len);
+}
+return (len);
 }
