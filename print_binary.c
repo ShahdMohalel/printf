@@ -15,11 +15,10 @@ if (n == 0)
 return (_putchar('0'));
 if (n < 1)
 return (-1);
-	len = base(n, 2);
-	str = malloc(sizeof(char) * len + 1);
-	if (str == NULL)
-		return (-1);
-
+len = base(n, 2);
+str = malloc(sizeof(char) * len + 1);
+if (str == NULL)
+return (-1);
 	for (i = 0; n > 0; i++)
 	{
 		if (n % 2 == 0)
