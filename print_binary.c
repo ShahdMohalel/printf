@@ -10,11 +10,11 @@ unsigned int n;
 int i, len;
 char *str;
 char *rev_str;
-	n = va_arg(args, unsigned int);
-	if (n == 0)
-		return (_putchar('0'));
-	if (n < 1)
-		return (-1);
+n = va_arg(args, unsigned int);
+if (n == 0)
+return (_putchar('0'));
+if (n < 1)
+return (-1);
 	len = base(n, 2);
 	str = malloc(sizeof(char) * len + 1);
 	if (str == NULL)
