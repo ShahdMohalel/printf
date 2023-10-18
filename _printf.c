@@ -22,8 +22,8 @@ conver_t f_list[] = {
 {"X", print_uh},
 {"+", plus},
 {"R", print_rot13},
-		{"r", rev},
-		{" ", space},
+{"r", rev},
+{" ", space},
 		{"p", print_ptr},
 		{NULL, NULL}
 	};
