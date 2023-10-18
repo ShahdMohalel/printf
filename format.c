@@ -38,8 +38,8 @@ else
 return (-1);
 }
 i = i + 1;
-		}
-		else
+}
+else
 		{
 			_putchar(format[i]);
 			len++;
