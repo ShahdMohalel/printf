@@ -29,7 +29,7 @@ break;
 if (f_list[j].sym == NULL && format[i + 1] != ' ')
 {
 if (format[i + 1] != '\0')
-				{
+{
 					_putchar(format[i]);
 					_putchar(format[i + 1]);
 					len = len + 2;
