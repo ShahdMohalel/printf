@@ -8,6 +8,7 @@
 int _printf(const char *format, ...)
 {
 int len;
+va_list arg_list;
 conver_t f_list[] = {
 {"%", print_percent},
 {"c", print_char},

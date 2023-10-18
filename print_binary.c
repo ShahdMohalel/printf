@@ -35,6 +35,6 @@ return (-1);
 write_base(rev_str);
 free(str);
 free(rev_str);
-return (len);
 }
+return (len);
 }
