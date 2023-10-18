@@ -24,7 +24,6 @@ for (i = 0; n > 0; i++)
 if (n % 2 == 0)
 str[i] = '0';
 else
-{
 str[i] = '1';
 n = n / 2;
 }
@@ -35,6 +34,5 @@ return (-1);
 write_base(rev_str);
 free(str);
 free(rev_str);
-}
 return (len);
 }
