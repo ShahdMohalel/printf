@@ -26,10 +26,8 @@ conver_t f_list[] = {
 {" ", space},
 {"p", print_ptr},
 {NULL, NULL}
-	};
-	va_list arg_list;
-
-	if (format == NULL)
+};
+if (format == NULL)
 		return (-1);
 
 	va_start(arg_list, format);
