@@ -23,7 +23,7 @@ r_val = f_list[j].f(arg_list);
 if (r_val == -1)
 return (-1);
 len += r_val;
-					break;
+break;
 				}
 			}
 			if (f_list[j].sym == NULL && format[i + 1] != ' ')
