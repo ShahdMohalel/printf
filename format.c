@@ -15,7 +15,7 @@ for (i = 0; format[i] != '\0'; i++)
 {
 if (format[i] == '%')
 {
-			for (j = 0; f_list[j].sym != NULL; j++)
+for (j = 0; f_list[j].sym != NULL; j++)
 			{
 				if (format[i + 1] == f_list[j].sym[0])
 				{
