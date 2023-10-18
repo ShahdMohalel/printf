@@ -6,11 +6,10 @@
  */
 int print_binary(va_list args)
 {
-	unsigned int n;
-	int i, len;
-	char *str;
-	char *rev_str;
-
+unsigned int n;
+int i, len;
+char *str;
+char *rev_str;
 	n = va_arg(args, unsigned int);
 	if (n == 0)
 		return (_putchar('0'));
