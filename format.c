@@ -34,7 +34,7 @@ _putchar(format[i]);
 _putchar(format[i + 1]);
 len = len + 2;
 }
-				else
+else
 					return (-1);
 			}
 			i = i + 1;
