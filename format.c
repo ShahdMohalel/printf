@@ -42,8 +42,8 @@ i = i + 1;
 else
 {
 _putchar(format[i]);
-			len++;
-		}
+len++;
+}
 	}
 	return (len);
 }
