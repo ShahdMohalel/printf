@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * print_hex_aux - prints an hexgecimal number.
- * @num: arguments.
+ * print_hexptr - prints an hexgecimal number.
+ * @n: arguments.
  * Return: counter.
  */
 
